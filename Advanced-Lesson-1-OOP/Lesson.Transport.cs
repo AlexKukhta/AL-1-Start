@@ -22,6 +22,21 @@ namespace Advanced_Lesson_1_OOP
             Transport winner = maserati;
             FuelCar firstPlace = (FuelCar)winner;
 
+            var transport3 = new Car() { Engine = 2.0 };
+            var transport4 = new Car() { Engine = 1.6 };
+
+            bool result = transport3 > transport4;
+            Console.WriteLine(result);
+
+            var transport5 = new Car() { Engine = 1.8 };
+            bool result2 = transport5 < transport4;
+            Console.WriteLine(result2);
+
+            bool result3 = transport3 == transport5;
+            Console.WriteLine(result3);
+            bool result4 = transport4 != transport5;
+            Console.WriteLine(result4);
+
         }   
     }
 
@@ -42,7 +57,17 @@ namespace Advanced_Lesson_1_OOP
 
     public class Car : Transport
     {
-        public float Engine { get; set; }
+        public double Engine { get; set; }
+
+        public static bool operator > (Car c1, Car c2)
+        {
+            return  c1.Engine > c2.Engine;
+        }
+
+        public static bool operator <(Car c1, Car c2)
+        {
+            return c1.Engine > c2.Engine;
+        }
     }
 
     public class FuelCar : Car
