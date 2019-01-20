@@ -35,13 +35,23 @@ namespace Advanced_Lesson_1_OOP
             var c2 = new Circle(4);
             var s3 = new Square(4);
             var s4 = new Square(6);
+            var tr1 = new Treangle(2, 5);
+            var tr2 = new Treangle(7, 20);
 
-            var array = new Finish [] {c1,c2,s3,s4};
+            //var array = new Finish [] {c1,c2,s3,s4};
 
-            for (int i = 0; i < 4; i++)
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    array[i].CalculateArea();
+            //    Console.WriteLine(array[i].CalculateArea());
+            //}
+
+            var array2 = new Finish[] { c1, c2, s3, s4, tr1, tr2 };
+
+            for (int i = 0; i < 6; i++)
             {
-                array[i].CalculateArea();
-                Console.WriteLine(array[i].CalculateArea());
+                array2[i].CalculateArea();
+                Console.WriteLine(array2[i].CalculateArea());
             }
         }
 
@@ -52,6 +62,22 @@ namespace Advanced_Lesson_1_OOP
         public static void A_L1_P7_OperatorsOverloading()
         {            
         }
+
+        class Treangle:Finish
+        {
+            public int a;
+            public int h;
+            public Treangle(int a, int h)
+            {
+                this.a = a;
+                this.h = h;
+            }
+            public override double CalculateArea()
+            {
+                return a*h*1/2;
+            }
+        }
+
 
         class Circle:Finish
         {
